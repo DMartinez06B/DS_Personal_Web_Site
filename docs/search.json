@@ -2,9 +2,9 @@
   {
     "objectID": "story_telling.html",
     "href": "story_telling.html",
-    "title": "about me",
+    "title": "Translating Numbers into Narratives",
     "section": "",
-    "text": "MarkDown Basics",
+    "text": "Translating Numbers into Narratives\nData has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.\nMy storytelling philosophy is simple: * Clarity Over Complexity: Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately. * Answer the Prompt: Every chart must directly answer a specific business question or challenge a widely held assumption. * Context is Key: Use subtitles, custom sorting, and specific color palettes to guide the viewer’s eye exactly where it needs to go.\n\n\n\n\n Back to top",
     "crumbs": [
       "Story Telling"
     ]
@@ -259,9 +259,9 @@
   {
     "objectID": "exploration.html",
     "href": "exploration.html",
-    "title": "about me",
+    "title": "Uncovering the Shape of the Data",
     "section": "",
-    "text": "MarkDown Basics",
+    "text": "Uncovering the Shape of the Data\nExploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.\nAcross my portfolio, data exploration has allowed me to: * Identify the Heaviest Hitters: Using feature importance extraction to figure out exactly which variables carry the most mathematical weight. * Engineer New Features: Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories. * Validate the Data: Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.\n\n\n\n\n Back to top",
     "crumbs": [
       "Data Exploration"
     ]
@@ -315,9 +315,9 @@
   {
     "objectID": "ml.html",
     "href": "ml.html",
-    "title": "about me",
+    "title": "Predicting the Future",
     "section": "",
-    "text": "MarkDown Basics",
+    "text": "Predicting the Future\nThe final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes.\nIn these projects, I demonstrate proficiency in: * Classification Models: Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers. * Regression Models: Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared. * Hyperparameter Tuning: Restraining models by limiting tree depth and estimator counts to prevent algorithms from “overfitting” on noisy data.\n\n\n\n\n Back to top",
     "crumbs": [
       "Machine Learning"
     ]

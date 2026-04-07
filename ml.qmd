@@ -1,11 +1,7 @@
----
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
----
+# Predicting the Future
+The final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes. 
 
-# Title 1 Header
-## Title 2 Header
-
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
-
+In these projects, I demonstrate proficiency in:
+* **Classification Models:** Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers.
+* **Regression Models:** Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared.
+* **Hyperparameter Tuning:** Restraining models by limiting tree depth and estimator counts to prevent algorithms from "overfitting" on noisy data.

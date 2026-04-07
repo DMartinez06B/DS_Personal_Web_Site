@@ -1,10 +1,7 @@
----
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
----
+# Uncovering the Shape of the Data
+Exploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.
 
-# Title 1 Header
-## Title 2 Header
-
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+Across my portfolio, data exploration has allowed me to:
+* **Identify the Heaviest Hitters:** Using feature importance extraction to figure out exactly which variables carry the most mathematical weight.
+* **Engineer New Features:** Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories.
+* **Validate the Data:** Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.

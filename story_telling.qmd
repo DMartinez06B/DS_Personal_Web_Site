@@ -1,10 +1,7 @@
----
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
----
+# Translating Numbers into Narratives
+Data has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.
 
-# Title 1 Header
-## Title 2 Header
-
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+My storytelling philosophy is simple:
+* **Clarity Over Complexity:** Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately.
+* **Answer the Prompt:** Every chart must directly answer a specific business question or challenge a widely held assumption.
+* **Context is Key:** Use subtitles, custom sorting, and specific color palettes to guide the viewer's eye exactly where it needs to go.
