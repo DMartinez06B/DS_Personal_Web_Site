@@ -1,10 +1,11 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "Full Stack"
+subtitle: "Data Science Portfolio"
 ---
 
-# Title 1 Header
-## Title 2 Header
+# Full Stack Development
+## End-to-End Solutions
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+With my minor in Software Engineering, I build comprehensive applications covering both the front-end (HTML, CSS, JavaScript) and back-end logic.
+
+[Explore my Github for Flight Delays](https://github.com/DMartinez06B/Flight_Delays_DS)

@@ -1,10 +1,16 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
+title: "David Martinez"
+subtitle: "My Data Science Portfolio"
 # use quarto markdown to 
 ---
 
-# Title 1 Header
-## Title 2 Header
+# Welcome to my Portfolio
+## About Me
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+I am currently attending BYU-Idaho, getting my Bachelor's in Data Science alongside a minor in Software Development (expected graduation: Winter 2026). I am a proactive problem solver with a sharp vision, strong attention to detail, and a passion for data and software development. 
+
+### My Skills
+- **Languages & Frameworks:** Python, SQL, HTML, CSS, JavaScript, C#, Java, Dart
+- **Tools & Tech:** PowerBI, DAX, GitHub, VS Code
+
+Feel free to explore my projects using the sidebar navigation. You can also view my previous projects on [GitHub](https://github.com/DMartinez06B/Flight_Delays_DS)!
