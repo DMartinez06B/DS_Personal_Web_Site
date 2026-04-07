@@ -3,18 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "David Martinez - Data Science Portfolio"
+  title: "Your_Name - Data Science Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  repo-url: https://github.com/DMartinez06B
+  repo-url: https://github.com/username/username.github.io
   #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
 
   page-footer: 
     border: true
-    left: "David Martinez 2026©"
+    left: "Your_Name 2024©"
     right: 
       - icon: linkedin
-        href: https://www.linkedin.com/in/dmar06b
+        href: Your_LinkedIn_URL
 
   navbar:
     background: primary

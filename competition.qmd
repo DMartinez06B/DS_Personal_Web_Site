@@ -1,11 +1,10 @@
 ---
-title: "Competitions"
-subtitle: "Data Science Portfolio"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Data Competitions
-## Challenging Limits
+# Title 1 Header
+## Title 2 Header
 
-These are some of the coding and data science competitions I have participated in, allowing me to apply my knowledge in high-pressure, real-world scenario challenges.
-
-[Explore my Github for Flight Delays](https://github.com/DMartinez06B/Flight_Delays_DS)
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

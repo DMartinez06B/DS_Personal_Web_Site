@@ -1,11 +1,10 @@
 ---
-title: "Data Cleansing"
-subtitle: "Data Science Portfolio"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Data Cleansing Projects
-## Preparing Data for Analysis
+# Title 1 Header
+## Title 2 Header
 
-In these projects, I focus on transforming raw, messy data into clean, structured formats ready for deeper insights. 
-
-[Explore my Github for Flight Delays](https://github.com/DMartinez06B/Flight_Delays_DS)
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

@@ -1,11 +1,10 @@
 ---
-title: "Story Telling"
-subtitle: "Data Science Portfolio"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Data Storytelling
-## Communicating Insights
+# Title 1 Header
+## Title 2 Header
 
-Data is only as valuable as the story it tells. In these projects, I focus on crafting compelling narratives, visualizations, and dashboards using tools like PowerBI and DAX to communicate business insights effectively.
-
-[Explore my Github for Flight Delays](https://github.com/DMartinez06B/Flight_Delays_DS)
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

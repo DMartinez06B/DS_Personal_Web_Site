@@ -1,11 +1,10 @@
 ---
-title: "Data Exploration"
-subtitle: "Data Science Portfolio"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Exploratory Data Analysis
-## Uncovering Hidden Patterns
+# Title 1 Header
+## Title 2 Header
 
-In these projects, I dive into datasets using Python and SQL to uncover trends, outliers, and key patterns. 
-
-[Explore my Github for Flight Delays](https://github.com/DMartinez06B/Flight_Delays_DS)
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
