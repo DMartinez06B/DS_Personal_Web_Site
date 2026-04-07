@@ -1,8 +1,10 @@
 ---
-title: "Competitions"
-subtitle: "Hackathons and Data Challenges"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Competition Projects
+# Title 1 Header
+## Title 2 Header
 
-Projects from data science hackathons, Kaggle algorithms, and external data competitions.
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

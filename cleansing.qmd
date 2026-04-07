@@ -1,15 +1,10 @@
 ---
-title: "Data Cleansing"
-subtitle: "Flight Delays & Star Wars Survey"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Flight Delays
-## Data Wrangling
-Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., `-999`, `"n/a"`, empty strings, and `"1500+"`) into consistent `np.nan` values for accurate analysis.
+# Title 1 Header
+## Title 2 Header
 
-# Star Wars Survey
-## Data Validation
-Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article's charts (Movies Seen, Best Movie, Who Shot First).
-
-## Data Preparation
-Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

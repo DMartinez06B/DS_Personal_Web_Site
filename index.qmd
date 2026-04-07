@@ -4,7 +4,7 @@ subtitle: "my data science portfolio"
 # use quarto markdown to 
 ---
 
-# David Martinez
-## Data Science Portfolio
+# Title 1 Header
+## Title 2 Header
 
 [MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

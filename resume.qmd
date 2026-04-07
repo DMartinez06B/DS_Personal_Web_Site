@@ -1,65 +1,89 @@
 ---
 layout: cv
-title: David Martinez's CV
+title: Isaac Newtons's CV
 ---
-# David Martinez
-Software Engineering Student, Minor in QA
+# Isaac Newton
+Physicist, Mathematician, Cambridge professor.
 
 <div id="webaddress">
-<a href="mailto:dmar06b@gmail.com">dmar06b@gmail.com</a>
-| <a href="https://www.linkedin.com/in/dmar06b">LinkedIn Profile</a>
-| <a href="https://github.com/DMartinez06B">GitHub Profile</a>
+<a href="isaac@applesdofall.org">isaac@applesdofall.org</a>
+| <a href="http://en.wikipedia.org/wiki/Isaac_Newton">My wikipedia page</a>
 </div>
 
-## Profile
 
-A proactive person at solving problems with patience, a sharp vision, and attention in situations under pressure. Fast learning, responsible, organized, and focused on results. Generator of ideas and good interpersonal relationships. 
+## Currently
 
-## Experience
+Standing on the shoulders of giants
 
-__CIT Lab Secretary and Tutor__  
-*Brigham Young University - Idaho (Rexburg, Idaho)*
+### Specialized in
 
-- Volunteer as a tutor, helping students with general programming and troubleshooting
-- Supported overseeing operations, assisted in finding tutors, and advertising the lab
-- Simplified registration and check-in time by reducing the time and steps needed in half
+Laws of motion, gravitation, minting coins, disliking [Robert Hooke](http://en.wikipedia.org/wiki/Robert_Hooke)
 
-__Technician and seller of smartphones__  
-*Arca de Noe Smartphones (Santa Cruz, Bolivia)*
 
-- Increased sales in general, especially in premium cell phone models, by double the sales.
-- Built trust and reliance in-store through good customer service and strong smartphone knowledge.
+### Research interests
 
-__International Mentor__  
-*HEBER J. GRANT Mentoring (Rexburg, Idaho)*
+Cooling, power series, optics, alchemy, planetary motions, apples.
 
-- Supported emotionally and guided students, addressing concerns and helping navigate cultural differences.
-- Provided knowledge of resources available on campus, including counseling services, academic support, and extracurricular activities.
 
 ## Education
 
-`September 2022 - Present`  
-__Bachelor of Science Software Engineering - Minor in QA__  
-*Brigham Young University - Idaho (Rexburg, Idaho)*  
-- Expected Graduation: April 2027  
-- GPA: 3.1
+`1654-1660`
+__The King's School, Grantham.__
 
-`January 2016 - September 2016`  
-__Repair and maintenance of smartphones__  
-*Institute CAPSES (Santa Cruz, Bolivia)*  
-- Smartphone repair (software/hardware)
+`June 1661 - now`
+__Trinity College, Cambridge__
 
-## Skills
+- Sizar
 
-- Python, C#, Java, HTML, CSS, SQL, JavaScript, Dart
-- Debugging, Technical support
-- Computer software/hardware maintenance
-- Smartphone software/hardware maintenance
-- Leadership, Teaching, and Multitasking
+`1667 - death`
+__Trinity College, Cambridge__
 
-## Tools
+- Fellow
 
-- VS Code
-- Antigravity
-- JetBrains Rider
-- LM Studio
+
+
+## Awards
+
+`2012`
+President, *Royal Society*, London, UK
+
+Associate, *French Academy of Science*, Paris, France
+
+
+
+## Publications
+
+<!-- A list is also available [online](http://scholar.google.co.uk/citations?user=LTOTl0YAAAAJ) -->
+
+### Journals
+
+`1669`
+Newton Sir I, De analysi per æquationes numero terminorum infinitas. 
+
+`1669`
+Lectiones opticæ.
+
+etc. etc. etc.
+
+### Patents
+
+`2012`
+Infinitesimal calculus for solutions to physics problems, [SMBC](http://www.techdirt.com/articles/20121011/09312820678/if-patents-had-been-around-time-newton.shtml) patent 001
+
+
+## Occupation
+
+`1600`
+__Royal Mint__, London
+
+- Warden
+- Minted coins
+
+`1600`
+__Lucasian professor of Mathematics__, Cambridge University
+
+
+
+<!-- ### Footer
+
+Last updated: May 2013 -->

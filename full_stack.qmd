@@ -1,8 +1,10 @@
 ---
-title: "Full Stack"
-subtitle: "End-to-End Application Development"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Full Stack Projects
+# Title 1 Header
+## Title 2 Header
 
-This section features comprehensive projects where I've bridged the gap between front-end interfaces, back-end logic, and database management, producing fully functional web applications.
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)

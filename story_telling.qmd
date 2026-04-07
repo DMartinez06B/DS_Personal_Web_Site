@@ -1,8 +1,10 @@
 ---
-title: "Story Telling"
-subtitle: "Flight Delays Dashboard"
+title: "about me"
+subtitle: "my data science portfolio"
+# use quarto markdown to 
 ---
 
-# Flight Delays
-## Visualization
-Built bar charts using `lets_plot` to visualize delay proportions across different airports and months, utilizing data reshaping techniques like `pd.melt()` to compare different delay types side-by-side.
+# Title 1 Header
+## Title 2 Header
+
+[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
