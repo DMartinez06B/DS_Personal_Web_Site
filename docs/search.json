@@ -38,11 +38,11 @@
     "text": "Software Engineering Student\n\ndmar06b@gmail.com | www.linkedin.com/in/dmar06b | GitHub | +1(208) 757-7712\n\n\n\nA proactive person at solving problems with patience, a sharp vision, and attention in situations under pressure. Fast learning, responsible, organized, and focused on results. Generator of ideas and good interpersonal relationships.\n\n\n\nSeptember 2022 - Present (Expected Graduation: April 2027) Brigham Young University - Idaho, Rexburg, Idaho\n\nBachelor of Science Software Engineering - Minor in QA\nGPA: 3.1\n\nJanuary 2016 - September 2016 Institute CAPSES, Santa Cruz, Bolivia\n\nRepair and maintenance of smartphones\nSmartphone repair (software/hardware)\n\n\n\n\nCIT Lab Secretary and Tutor Brigham Young University - Idaho\n\nVolunteer as a tutor, helping students with general programming and troubleshooting\nSupported overseeing operations, assisted in finding tutors, and advertising the lab\nSimplified registration and check-in time by reducing the time and steps needed in half\n\nTechnician and seller of smartphones Arca de Noe Smartphones, Santa Cruz, Bolivia\n\nIncreased sales in general, especially in premium cell phone models, by double the sales.\nBuilt trust and reliance in-store through good customer service and strong smartphone knowledge.\n\nInternational Mentor HEBER J. GRANT Mentoring, Rexburg, Idaho\n\nSupported emotionally and guided students, addressing concerns and helping navigate cultural differences.\nProvided knowledge of resources available on campus, including counseling services, academic support, and extracurricular activities.\n\n\n\n\n\nPython, C#, Java, HTML, CSS, SQL, JavaScript, Dart\nDebugging, Technical support\nComputer software/hardware maintenance\nSmartphone software/hardware maintenance\nLeadership, Teaching, and Multitasking\n\n\n\n\n\nVS Code\nAntigravity\nJetBrains Rider\nLM Studio"
   },
   {
-    "objectID": "resume.html#currently",
-    "href": "resume.html#currently",
-    "title": "Isaac Newtons’s CV",
+    "objectID": "resume.html#profile",
+    "href": "resume.html#profile",
+    "title": "David Martinez’s CV",
     "section": "",
-    "text": "Standing on the shoulders of giants\n\n\nLaws of motion, gravitation, minting coins, disliking Robert Hooke\n\n\n\nCooling, power series, optics, alchemy, planetary motions, apples."
+    "text": "A proactive person at solving problems with patience, a sharp vision, and attention in situations under pressure. Fast learning, responsible, organized, and focused on results. Generator of ideas and good interpersonal relationships."
   },
   {
     "objectID": "resume.html#education",
@@ -52,25 +52,25 @@
     "text": "September 2022 - Present (Expected Graduation: April 2027) Brigham Young University - Idaho, Rexburg, Idaho\n\nBachelor of Science Software Engineering - Minor in QA\nGPA: 3.1\n\nJanuary 2016 - September 2016 Institute CAPSES, Santa Cruz, Bolivia\n\nRepair and maintenance of smartphones\nSmartphone repair (software/hardware)"
   },
   {
-    "objectID": "resume.html#awards",
-    "href": "resume.html#awards",
-    "title": "Isaac Newtons’s CV",
+    "objectID": "resume.html#experience",
+    "href": "resume.html#experience",
+    "title": "David Martinez’s CV",
     "section": "",
-    "text": "2012 President, Royal Society, London, UK\nAssociate, French Academy of Science, Paris, France"
+    "text": "CIT Lab Secretary and Tutor Brigham Young University - Idaho\n\nVolunteer as a tutor, helping students with general programming and troubleshooting\nSupported overseeing operations, assisted in finding tutors, and advertising the lab\nSimplified registration and check-in time by reducing the time and steps needed in half\n\nTechnician and seller of smartphones Arca de Noe Smartphones, Santa Cruz, Bolivia\n\nIncreased sales in general, especially in premium cell phone models, by double the sales.\nBuilt trust and reliance in-store through good customer service and strong smartphone knowledge.\n\nInternational Mentor HEBER J. GRANT Mentoring, Rexburg, Idaho\n\nSupported emotionally and guided students, addressing concerns and helping navigate cultural differences.\nProvided knowledge of resources available on campus, including counseling services, academic support, and extracurricular activities."
   },
   {
-    "objectID": "resume.html#publications",
-    "href": "resume.html#publications",
-    "title": "Isaac Newtons’s CV",
+    "objectID": "resume.html#skills",
+    "href": "resume.html#skills",
+    "title": "David Martinez’s CV",
     "section": "",
-    "text": "1669 Newton Sir I, De analysi per æquationes numero terminorum infinitas.\n1669 Lectiones opticæ.\netc. etc. etc.\n\n\n\n2012 Infinitesimal calculus for solutions to physics problems, SMBC patent 001"
+    "text": "Python, C#, Java, HTML, CSS, SQL, JavaScript, Dart\nDebugging, Technical support\nComputer software/hardware maintenance\nSmartphone software/hardware maintenance\nLeadership, Teaching, and Multitasking"
   },
   {
-    "objectID": "resume.html#occupation",
-    "href": "resume.html#occupation",
-    "title": "Isaac Newtons’s CV",
+    "objectID": "resume.html#tools",
+    "href": "resume.html#tools",
+    "title": "David Martinez’s CV",
     "section": "",
-    "text": "1600 Royal Mint, London\n\nWarden\nMinted coins\n\n1600 Lucasian professor of Mathematics, Cambridge University"
+    "text": "VS Code\nAntigravity\nJetBrains Rider\nLM Studio"
   },
   {
     "objectID": "Machine_Learning/project3.html",
@@ -194,19 +194,9 @@
   {
     "objectID": "cleansing.html",
     "href": "cleansing.html",
-    "title": "about me",
+    "title": "The Foundation: Data Cleansing",
     "section": "",
-    "text": "MarkDown Basics",
-    "crumbs": [
-      "Data Cleansing"
-    ]
-  },
-  {
-    "objectID": "cleansing.html#title-2-header",
-    "href": "cleansing.html#title-2-header",
-    "title": "about me",
-    "section": "",
-    "text": "MarkDown Basics",
+    "text": "The Foundation: Data Cleansing\nIn the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process.\nMy approach to data wrangling involves: * Standardizing Missing Values: Identifying and normalizing inconsistent null placeholders (like -999, blank strings, or \"N/A\") into standard formats so mathematical functions work correctly. * Format Transformation: Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding. * Preventing Data Leakage: Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the “answer key” to the problem it is trying to solve.\n\n\n\n\n Back to top",
     "crumbs": [
       "Data Cleansing"
     ]
@@ -363,33 +353,5 @@
       "Story Telling",
       "Project 3"
     ]
-  },
-  {
-    "objectID": "resume.html#profile",
-    "href": "resume.html#profile",
-    "title": "David Martinez’s CV",
-    "section": "",
-    "text": "A proactive person at solving problems with patience, a sharp vision, and attention in situations under pressure. Fast learning, responsible, organized, and focused on results. Generator of ideas and good interpersonal relationships."
-  },
-  {
-    "objectID": "resume.html#experience",
-    "href": "resume.html#experience",
-    "title": "David Martinez’s CV",
-    "section": "",
-    "text": "CIT Lab Secretary and Tutor Brigham Young University - Idaho\n\nVolunteer as a tutor, helping students with general programming and troubleshooting\nSupported overseeing operations, assisted in finding tutors, and advertising the lab\nSimplified registration and check-in time by reducing the time and steps needed in half\n\nTechnician and seller of smartphones Arca de Noe Smartphones, Santa Cruz, Bolivia\n\nIncreased sales in general, especially in premium cell phone models, by double the sales.\nBuilt trust and reliance in-store through good customer service and strong smartphone knowledge.\n\nInternational Mentor HEBER J. GRANT Mentoring, Rexburg, Idaho\n\nSupported emotionally and guided students, addressing concerns and helping navigate cultural differences.\nProvided knowledge of resources available on campus, including counseling services, academic support, and extracurricular activities."
-  },
-  {
-    "objectID": "resume.html#skills",
-    "href": "resume.html#skills",
-    "title": "David Martinez’s CV",
-    "section": "",
-    "text": "Python, C#, Java, HTML, CSS, SQL, JavaScript, Dart\nDebugging, Technical support\nComputer software/hardware maintenance\nSmartphone software/hardware maintenance\nLeadership, Teaching, and Multitasking"
-  },
-  {
-    "objectID": "resume.html#tools",
-    "href": "resume.html#tools",
-    "title": "David Martinez’s CV",
-    "section": "",
-    "text": "VS Code\nAntigravity\nJetBrains Rider\nLM Studio"
   }
 ]

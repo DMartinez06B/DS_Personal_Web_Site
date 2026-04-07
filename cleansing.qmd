@@ -1,10 +1,7 @@
----
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
----
+# The Foundation: Data Cleansing
+In the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process. 
 
-# Title 1 Header
-## Title 2 Header
-
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+My approach to data wrangling involves:
+* **Standardizing Missing Values:** Identifying and normalizing inconsistent null placeholders (like `-999`, blank strings, or `"N/A"`) into standard formats so mathematical functions work correctly.
+* **Format Transformation:** Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding.
+* **Preventing Data Leakage:** Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the "answer key" to the problem it is trying to solve.
