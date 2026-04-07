@@ -1,13 +1,15 @@
 ---
 title: "Machine Learning"
+subtitle: "Housing Data & Star Wars Survey"
 ---
 
-# Machine Learning Experience
+# Housing Data
+## Classification
+Built a Random Forest Classifier to predict whether a house was built before 1980, achieving over 93% accuracy.
 
-## Housing Data Project
-**Classification:** Built a Random Forest Classifier to predict whether a house was built before 1980, achieving over 93% accuracy.
+## Regression (Stretch)
+Combined original housing data with a neighborhood dataset. Built a Random Forest Regressor to predict the exact year a house was built, evaluating the model using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), R-squared metrics, and residual plots.
 
-**Regression (Stretch):** Combined original housing data with a neighborhood dataset. Built a Random Forest Regressor to predict the exact year a house was built, evaluating the model using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), R-squared metrics, and residual plots.
-
-## Star Wars Survey Project
-**Advanced Modeling:** Trained and compared multiple models, ultimately using a tuned Gradient Boosting Classifier to predict whether a survey respondent makes over $50,000 a year based purely on their demographic and Star Wars-related answers, actively combating data leakage and overfitting.
+# Star Wars Survey
+## Advanced Modeling
+Trained and compared multiple models, ultimately using a tuned Gradient Boosting Classifier to predict whether a survey respondent makes over $50,000 a year based purely on their demographic and Star Wars-related answers, actively combating data leakage and overfitting.

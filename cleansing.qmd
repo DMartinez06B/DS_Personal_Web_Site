@@ -1,13 +1,15 @@
 ---
 title: "Data Cleansing"
+subtitle: "Flight Delays & Star Wars Survey"
 ---
 
-# Data Cleansing Experience
+# Flight Delays
+## Data Wrangling
+Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., `-999`, `"n/a"`, empty strings, and `"1500+"`) into consistent `np.nan` values for accurate analysis.
 
-## Flight Delays Project
-**Data Wrangling:** Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., `-999`, `"n/a"`, empty strings, and `"1500+"`) into consistent `np.nan` values for accurate analysis.
+# Star Wars Survey
+## Data Validation
+Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article's charts (Movies Seen, Best Movie, Who Shot First).
 
-## Star Wars Survey Project
-**Data Validation:** Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article's charts (Movies Seen, Best Movie, Who Shot First).
-
-**Data Preparation:** Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.
+## Data Preparation
+Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.

@@ -351,10 +351,14 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-cleansing-experience" id="toc-data-cleansing-experience" class="nav-link active" data-scroll-target="#data-cleansing-experience">Data Cleansing Experience</a>
+  <li><a href="#flight-delays" id="toc-flight-delays" class="nav-link active" data-scroll-target="#flight-delays">Flight Delays</a>
   <ul class="collapse">
-  <li><a href="#flight-delays-project" id="toc-flight-delays-project" class="nav-link" data-scroll-target="#flight-delays-project">Flight Delays Project</a></li>
-  <li><a href="#star-wars-survey-project" id="toc-star-wars-survey-project" class="nav-link" data-scroll-target="#star-wars-survey-project">Star Wars Survey Project</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
+  </ul></li>
+  <li><a href="#star-wars-survey" id="toc-star-wars-survey" class="nav-link" data-scroll-target="#star-wars-survey">Star Wars Survey</a>
+  <ul class="collapse">
+  <li><a href="#data-validation" id="toc-data-validation" class="nav-link" data-scroll-target="#data-validation">Data Validation</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -366,6 +370,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Data Cleansing</h1>
+<p class="subtitle lead">Flight Delays &amp; Star Wars Survey</p>
 </div>
 
 
@@ -382,16 +387,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="data-cleansing-experience" class="level1">
-<h1>Data Cleansing Experience</h1>
-<section id="flight-delays-project" class="level2">
-<h2 class="anchored" data-anchor-id="flight-delays-project">Flight Delays Project</h2>
-<p><strong>Data Wrangling:</strong> Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., <code>-999</code>, <code>"n/a"</code>, empty strings, and <code>"1500+"</code>) into consistent <code>np.nan</code> values for accurate analysis.</p>
+<section id="flight-delays" class="level1">
+<h1>Flight Delays</h1>
+<section id="data-wrangling" class="level2">
+<h2 class="anchored" data-anchor-id="data-wrangling">Data Wrangling</h2>
+<p>Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., <code>-999</code>, <code>"n/a"</code>, empty strings, and <code>"1500+"</code>) into consistent <code>np.nan</code> values for accurate analysis.</p>
 </section>
-<section id="star-wars-survey-project" class="level2">
-<h2 class="anchored" data-anchor-id="star-wars-survey-project">Star Wars Survey Project</h2>
-<p><strong>Data Validation:</strong> Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article’s charts (Movies Seen, Best Movie, Who Shot First).</p>
-<p><strong>Data Preparation:</strong> Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.</p>
+</section>
+<section id="star-wars-survey" class="level1">
+<h1>Star Wars Survey</h1>
+<section id="data-validation" class="level2">
+<h2 class="anchored" data-anchor-id="data-validation">Data Validation</h2>
+<p>Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article’s charts (Movies Seen, Best Movie, Who Shot First).</p>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.</p>
 
 
 </section>

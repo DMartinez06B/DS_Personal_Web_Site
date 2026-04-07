@@ -1,8 +1,8 @@
 ---
 title: "Story Telling"
+subtitle: "Flight Delays Dashboard"
 ---
 
-# Data Story Telling Experience
-
-## Flight Delays Project
-**Visualization:** Built bar charts using `lets_plot` to visualize delay proportions across different airports and months, utilizing data reshaping techniques like `pd.melt()` to compare different delay types side-by-side.
+# Flight Delays
+## Visualization
+Built bar charts using `lets_plot` to visualize delay proportions across different airports and months, utilizing data reshaping techniques like `pd.melt()` to compare different delay types side-by-side.

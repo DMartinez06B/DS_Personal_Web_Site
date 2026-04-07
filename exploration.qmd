@@ -1,11 +1,12 @@
 ---
 title: "Data Exploration"
+subtitle: "Flight Delays & Housing Data"
 ---
 
-# Exploratory Data Analysis Experience
+# Flight Delays
+## Exploratory Data Analysis (EDA)
+Calculated the proportion of delays caused by weather, carriers, and security. Identified the worst airports for weather delays and determined the best month to fly to avoid delays overall.
 
-## Flight Delays Project
-**Exploratory Data Analysis (EDA):** Calculated the proportion of delays caused by weather, carriers, and security. Identified the worst airports for weather delays and determined the best month to fly to avoid delays overall.
-
-## Housing Data Project
-**Feature Engineering & Interpretation:** Extracted feature importances to determine the strongest predictors of a home's age (living area, 1-story architectural style, and number of bathrooms). Plotted these relationships using boxplots and scatter plots.
+# Housing Data
+## Feature Engineering & Interpretation
+Extracted feature importances to determine the strongest predictors of a home's age (living area, 1-story architectural style, and number of bathrooms). Plotted these relationships using boxplots and scatter plots.

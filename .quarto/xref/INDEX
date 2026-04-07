@@ -1,0 +1,77 @@
+{
+  "resume.qmd": {
+    "resume.html": "53706c2a"
+  },
+  "exploration.qmd": {
+    "exploration.html": "3823dc38"
+  },
+  "full_stack.qmd": {
+    "full_stack.html": "d7e27b54"
+  },
+  "index.qmd": {
+    "index.html": "1cfa7386"
+  },
+  "ml.qmd": {
+    "ml.html": "f495a353"
+  },
+  "story_telling.qmd": {
+    "story_telling.html": "77e3f9d0"
+  },
+  "cleansing.qmd": {
+    "cleansing.html": "618aa45d"
+  },
+  "Cleansing_Projects/project1.qmd": {
+    "project1.html": "fc5e4de1"
+  },
+  "competition.qmd": {
+    "competition.html": "4c29c205"
+  },
+  "Machine_Learning/project1.qmd": {
+    "project1.html": "8d24562e"
+  },
+  "Machine_Learning/project2.qmd": {
+    "project2.html": "25eb5ca7"
+  },
+  "Cleansing_Exploration/project1.qmd": {
+    "project1.html": "06fd714c"
+  },
+  "Cleansing_Exploration/project2.qmd": {
+    "project2.html": "6127406d"
+  },
+  "Cleansing_Exploration/project3.qmd": {
+    "project3.html": "0ac357b5"
+  },
+  "Cleansing_Projects/project2.qmd": {
+    "project2.html": "ec6bbc7c"
+  },
+  "Cleansing_Projects/project3.qmd": {
+    "project3.html": "97946fc6"
+  },
+  "Competition/project1.qmd": {
+    "project1.html": "f9c1dde7"
+  },
+  "Competition/project2.qmd": {
+    "project2.html": "2aaa4e9d"
+  },
+  "Competition/project3.qmd": {
+    "project3.html": "9100e68b"
+  },
+  "Full_Stack/project1.qmd": {
+    "project1.html": "c700dc88"
+  },
+  "Full_Stack/project2.qmd": {
+    "project2.html": "0ae7c7b0"
+  },
+  "Machine_Learning/project3.qmd": {
+    "project3.html": "3cc2a00d"
+  },
+  "Story_Telling/project1.qmd": {
+    "project1.html": "b3ffddab"
+  },
+  "Story_Telling/project2.qmd": {
+    "project2.html": "666e5c5a"
+  },
+  "Story_Telling/project3.qmd": {
+    "project3.html": "2011a2fd"
+  }
+}
