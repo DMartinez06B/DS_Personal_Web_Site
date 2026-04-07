@@ -1,10 +1,11 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "Data Exploration"
 ---
 
-# Title 1 Header
-## Title 2 Header
+# Exploratory Data Analysis Experience
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+## Flight Delays Project
+**Exploratory Data Analysis (EDA):** Calculated the proportion of delays caused by weather, carriers, and security. Identified the worst airports for weather delays and determined the best month to fly to avoid delays overall.
+
+## Housing Data Project
+**Feature Engineering & Interpretation:** Extracted feature importances to determine the strongest predictors of a home's age (living area, 1-story architectural style, and number of bathrooms). Plotted these relationships using boxplots and scatter plots.

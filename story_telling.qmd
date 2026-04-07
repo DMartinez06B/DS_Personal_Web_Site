@@ -1,10 +1,8 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "Story Telling"
 ---
 
-# Title 1 Header
-## Title 2 Header
+# Data Story Telling Experience
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+## Flight Delays Project
+**Visualization:** Built bar charts using `lets_plot` to visualize delay proportions across different airports and months, utilizing data reshaping techniques like `pd.melt()` to compare different delay types side-by-side.

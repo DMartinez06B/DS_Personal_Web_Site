@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Flight Delays"
+subtitle: "Unit 3: Data Cleaning, JSON, and EDA"
+author: "David Martinez"
 format:
   html:
     self-contained: true
@@ -22,7 +22,20 @@ format:
         caption: See code
 execute: 
   warning: false
-    
 ---
 
-### Paste in a template
+## Summary
+
+This project focuses on cleaning and exploring a messy JSON dataset of airport flight delays.
+
+### Data Wrangling
+
+Cleaned a messy JSON dataset of airport flight delays. Standardized various missing data types (e.g., `-999`, `"n/a"`, empty strings, and `"1500+"`) into consistent `np.nan` values for accurate analysis.
+
+### Exploratory Data Analysis (EDA)
+
+Calculated the proportion of delays caused by weather, carriers, and security. Identified the worst airports for weather delays and determined the best month to fly to avoid delays overall.
+
+### Visualization
+
+Built bar charts using `lets_plot` to visualize delay proportions across different airports and months, utilizing data reshaping techniques like `pd.melt()` to compare different delay types side-by-side.

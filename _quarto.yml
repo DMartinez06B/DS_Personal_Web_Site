@@ -3,18 +3,18 @@ project:
   output-dir: docs
 
 website:
-  title: "Your_Name - Data Science Portfolio"
+  title: "David Martinez - Data Science Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  repo-url: https://github.com/username/username.github.io
+  repo-url: https://github.com/DMartinez06B/DS_Personal_Web_Site
   #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
 
   page-footer: 
     border: true
-    left: "Your_Name 2024©"
+    left: "David Martinez 2024©"
     right: 
       - icon: linkedin
-        href: Your_LinkedIn_URL
+        href: https://www.linkedin.com/in/dmar06b
 
   navbar:
     background: primary
@@ -48,7 +48,7 @@ website:
         - text: "Data Cleansing"
           file: cleansing.qmd
         - text: "---"
-        - text: "Project 1"
+        - text: "Flight Delays"
           file: Cleansing_Projects/project1.qmd
         - text: "---"
         - text: "Project 2"
@@ -96,10 +96,10 @@ website:
         - text: "Machine Learning"
           file: ml.qmd
         - text: "---"
-        - text: "Project 1"
+        - text: "Housing Data"
           file: Machine_Learning/project1.qmd
         - text: "---"
-        - text: "Project 2"
+        - text: "Star Wars Survey"
           file: Machine_Learning/project2.qmd
         - text: "---"
         - text: "Project 3"

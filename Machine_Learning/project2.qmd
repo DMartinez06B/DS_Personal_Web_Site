@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Star Wars Survey Prediction"
+subtitle: "Unit 5: Advanced Data Munging & Predictive Modeling"
+author: "David Martinez"
 format:
   html:
     self-contained: true
@@ -22,7 +22,20 @@ format:
         caption: See code
 execute: 
   warning: false
-    
 ---
 
-### Paste in a template
+## Summary
+
+In this project, extremely messy survey data from FiveThirtyEight was structured and modeled to predict income levels based on Star Wars trivia and demographic information.
+
+### Data Validation
+
+Cleaned extremely messy survey data from FiveThirtyEight. Validated the dataset by successfully recreating three of the original article's charts (Movies Seen, Best Movie, Who Shot First).
+
+### Data Preparation
+
+Transformed text-heavy survey responses into machine-learning-ready numeric data using categorical mapping, label encoding, and one-hot encoding. Dynamically handled missing survey responses using median imputation.
+
+### Advanced Modeling
+
+Trained and compared multiple models, ultimately using a tuned Gradient Boosting Classifier to predict whether a survey respondent makes over $50,000 a year based purely on their demographic and Star Wars-related answers, actively combating data leakage and overfitting.

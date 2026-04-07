@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Housing Data Modeling"
+subtitle: "Unit 4: Machine Learning - Classification & Regression"
+author: "David Martinez"
 format:
   html:
     self-contained: true
@@ -22,7 +22,20 @@ format:
         caption: See code
 execute: 
   warning: false
-    
 ---
 
-### Paste in a template
+## Summary
+
+This project applies both classification and regression techniques on housing data to predict property age and build year.
+
+### Classification
+
+Built a Random Forest Classifier to predict whether a house was built before 1980, achieving over 93% accuracy.
+
+### Feature Engineering & Interpretation
+
+Extracted feature importances to determine the strongest predictors of a home's age (living area, 1-story architectural style, and number of bathrooms). Plotted these relationships using boxplots and scatter plots.
+
+### Regression (Stretch)
+
+Combined original housing data with a neighborhood dataset. Built a Random Forest Regressor to predict the exact year a house was built, evaluating the model using Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), R-squared metrics, and residual plots.
