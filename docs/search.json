@@ -4,7 +4,7 @@
     "href": "story_telling.html",
     "title": "Translating Numbers into Narratives",
     "section": "",
-    "text": "Translating Numbers into Narratives\nData has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.\nMy storytelling philosophy is simple: * Clarity Over Complexity: Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately. * Answer the Prompt: Every chart must directly answer a specific business question or challenge a widely held assumption. * Context is Key: Use subtitles, custom sorting, and specific color palettes to guide the viewer’s eye exactly where it needs to go.\n\n\n\n\n Back to top",
+    "text": "Data has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.\nMy storytelling philosophy is simple:\nClarity Over Complexity: Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately.\nAnswer the Prompt: Every chart must directly answer a specific business question or challenge a widely held assumption.\nContext is Key: Use subtitles, custom sorting, and specific color palettes to guide the viewer’s eye exactly where it needs to go.",
     "crumbs": [
       "Story Telling"
     ]
@@ -196,7 +196,7 @@
     "href": "cleansing.html",
     "title": "The Foundation: Data Cleansing",
     "section": "",
-    "text": "The Foundation: Data Cleansing\nIn the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process.\nMy approach to data wrangling involves: * Standardizing Missing Values: Identifying and normalizing inconsistent null placeholders (like -999, blank strings, or \"N/A\") into standard formats so mathematical functions work correctly. * Format Transformation: Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding. * Preventing Data Leakage: Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the “answer key” to the problem it is trying to solve.\n\n\n\n\n Back to top",
+    "text": "In the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process.\nMy approach to data wrangling involves:\nStandardizing Missing Values: Identifying and normalizing inconsistent null placeholders (like -999, blank strings, or “N/A”) into standard formats so mathematical functions work correctly.\nFormat Transformation: Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding.\nPreventing Data Leakage: Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the “answer key” to the problem it is trying to solve.",
     "crumbs": [
       "Data Cleansing"
     ]
@@ -261,7 +261,7 @@
     "href": "exploration.html",
     "title": "Uncovering the Shape of the Data",
     "section": "",
-    "text": "Uncovering the Shape of the Data\nExploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.\nAcross my portfolio, data exploration has allowed me to: * Identify the Heaviest Hitters: Using feature importance extraction to figure out exactly which variables carry the most mathematical weight. * Engineer New Features: Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories. * Validate the Data: Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.\n\n\n\n\n Back to top",
+    "text": "Exploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.\nAcross my portfolio, data exploration has allowed me to:\nIdentify the Heaviest Hitters: Using feature importance extraction to figure out exactly which variables carry the most mathematical weight.\nEngineer New Features: Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories.\nValidate the Data: Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.",
     "crumbs": [
       "Data Exploration"
     ]
@@ -317,7 +317,7 @@
     "href": "ml.html",
     "title": "Predicting the Future",
     "section": "",
-    "text": "Predicting the Future\nThe final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes.\nIn these projects, I demonstrate proficiency in: * Classification Models: Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers. * Regression Models: Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared. * Hyperparameter Tuning: Restraining models by limiting tree depth and estimator counts to prevent algorithms from “overfitting” on noisy data.\n\n\n\n\n Back to top",
+    "text": "The final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes.\nIn these projects, I demonstrate proficiency in:\nClassification Models: Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers.\nRegression Models: Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared.\nHyperparameter Tuning: Restraining models by limiting tree depth and estimator counts to prevent algorithms from “overfitting” on noisy data.",
     "crumbs": [
       "Machine Learning"
     ]
@@ -639,5 +639,165 @@
     "title": "Client Report - Star Wars for Dummies",
     "section": "Conclusion",
     "text": "Conclusion\nThe data indicates a clear, mathematical correlation between general demographics, Star Wars movie preferences, and household income. While survey data is notoriously noisy—making it highly susceptible to algorithm overfitting—applying strict data wrangling techniques (like label encoding) and model parameter constraints allowed the Gradient Boosting model to successfully detect the underlying patterns. By limiting the model’s tree depth, it avoided memorizing random character opinions and instead relied on broader demographic and viewership trends to successfully predict income brackets with 65% accuracy."
+  },
+  {
+    "objectID": "cleansing.html#overview",
+    "href": "cleansing.html#overview",
+    "title": "The Foundation: Data Cleansing",
+    "section": "",
+    "text": "In the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process.\nMy approach to data wrangling involves:\nStandardizing Missing Values: Identifying and normalizing inconsistent null placeholders (like -999, blank strings, or “N/A”) into standard formats so mathematical functions work correctly.\nFormat Transformation: Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding.\nPreventing Data Leakage: Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the “answer key” to the problem it is trying to solve.",
+    "crumbs": [
+      "Data Cleansing"
+    ]
+  },
+  {
+    "objectID": "cleansing.html#flight-delays-standardizing-missing-values",
+    "href": "cleansing.html#flight-delays-standardizing-missing-values",
+    "title": "The Foundation: Data Cleansing",
+    "section": "1. Flight Delays: Standardizing Missing Values",
+    "text": "1. Flight Delays: Standardizing Missing Values\nThe raw JSON flight dataset contained “missing” data in several breaking formats. I mapped all these anomalies (-999, ““,”n/a”) to consistent np.nan values so pandas could process the math correctly without skewing the averages.\n\n\nCode\n# Standardizing various missing data types into a single format\ndf['num_of_delays_carrier'] = pd.to_numeric(df['num_of_delays_carrier'], errors='coerce')\ndf['month'] = df['month'].replace('n/a', np.nan)\ndf['airport_name'] = df['airport_name'].replace('', np.nan)\n\n# Replacing arbitrary numerical placeholders\ndf = df.replace(-999.0, np.nan)",
+    "crumbs": [
+      "Data Cleansing"
+    ]
+  },
+  {
+    "objectID": "cleansing.html#housing-ml-preventing-data-leakage",
+    "href": "cleansing.html#housing-ml-preventing-data-leakage",
+    "title": "The Foundation: Data Cleansing",
+    "section": "2. Housing ML: Preventing Data Leakage",
+    "text": "2. Housing ML: Preventing Data Leakage\nWhen prepping the Denver housing dataset for predictive modeling, the biggest threat was “data leakage.” I explicitly stripped out columns like yrbuilt (the exact year built) and parcel (an arbitrary ID). If left in, the model would cheat and score 100% simply by reading the year.\n\n\nCode\n# Dropping columns that leak the target variable or are useless IDs\nX = df.drop(columns=['before1980', 'yrbuilt', 'parcel'])\ny = df['before1980']",
+    "crumbs": [
+      "Data Cleansing"
+    ]
+  },
+  {
+    "objectID": "cleansing.html#star-wars-survey-format-transformation",
+    "href": "cleansing.html#star-wars-survey-format-transformation",
+    "title": "The Foundation: Data Cleansing",
+    "section": "3. Star Wars Survey: Format Transformation",
+    "text": "3. Star Wars Survey: Format Transformation\nSurvey data is notoriously difficult to process because human answers are text-heavy. I mapped paragraph-long headers to concise names, translated text-based categorical ranges (like ages and incomes) into usable numbers, and transformed 14 separate character favorability columns into a 1-5 ordinal scale.",
+    "crumbs": [
+      "Data Cleansing"
+    ]
+  },
+  {
+    "objectID": "exploration.html#overview",
+    "href": "exploration.html#overview",
+    "title": "Uncovering the Shape of the Data",
+    "section": "",
+    "text": "Exploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.\nAcross my portfolio, data exploration has allowed me to:\nIdentify the Heaviest Hitters: Using feature importance extraction to figure out exactly which variables carry the most mathematical weight.\nEngineer New Features: Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories.\nValidate the Data: Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.",
+    "crumbs": [
+      "Data Exploration"
+    ]
+  },
+  {
+    "objectID": "exploration.html#flight-delays-engineering-new-features",
+    "href": "exploration.html#flight-delays-engineering-new-features",
+    "title": "Uncovering the Shape of the Data",
+    "section": "1. Flight Delays: Engineering New Features",
+    "text": "1. Flight Delays: Engineering New Features\nA simple count of delayed flights revealed that major hubs like Atlanta had the most delays simply because they had the most flights. To conduct a fair analysis, I engineered the Proportion of Delayed Flights, revealing that smaller regional airports actually suffered heavier weather-related groundings relative to their size.\n\n\nCode\n# Aggregating flights to calculate proportional delay metrics\nweather_delays = df.groupby('airport_name').agg(\n    total_flights=('num_of_flights_total', 'sum'),\n    weather_delayed_flights=('weather_delayed', 'sum')\n).reset_index()\n\n# Creating the proportional ratio\nweather_delays['proportion_weather_delayed'] = weather_delays['weather_delayed_flights'] / weather_delays['total_flights']",
+    "crumbs": [
+      "Data Exploration"
+    ]
+  },
+  {
+    "objectID": "exploration.html#housing-ml-identifying-the-heaviest-hitters",
+    "href": "exploration.html#housing-ml-identifying-the-heaviest-hitters",
+    "title": "Uncovering the Shape of the Data",
+    "section": "2. Housing ML: Identifying the Heaviest Hitters",
+    "text": "2. Housing ML: Identifying the Heaviest Hitters\nTo understand what clues gave away a home’s age, I extracted the feature_importances_ attribute from an initial Random Forest. This exploration revealed that the top three indicators were total living area (livearea), architectural style (arcstyle_ONE-STORY), and the number of bathrooms (numbaths).\n\n\nCode\n# Extracting and ranking the most important clues in the dataset\nimportances = rf_model.feature_importances_\n\nfeature_df = pd.DataFrame({\n    'Feature': X.columns,\n    'Importance': importances\n})\n\ntop_features = feature_df.sort_values(by='Importance', ascending=False).head(10)",
+    "crumbs": [
+      "Data Exploration"
+    ]
+  },
+  {
+    "objectID": "exploration.html#star-wars-survey-validating-the-data",
+    "href": "exploration.html#star-wars-survey-validating-the-data",
+    "title": "Uncovering the Shape of the Data",
+    "section": "3. Star Wars Survey: Validating the Data",
+    "text": "3. Star Wars Survey: Validating the Data\nYou cannot always trust survey respondents. Instead of trusting a simple “Yes/No” column regarding whether they had seen the films, I verified their claims dynamically by keeping only the rows that had non-null responses across the specific movie ranking columns.\n\n\nCode\n# Filtering respondents dynamically to validate the dataset\nseen_cols = ['Seen_Ep_I', 'Seen_Ep_II', 'Seen_Ep_III', 'Seen_Ep_IV', 'Seen_Ep_V', 'Seen_Ep_VI']\n\n# Drop respondents who haven't ranked a single movie\ndf_seen = df.dropna(subset=seen_cols, how='all').copy()\n\nprint(f\"Total verified respondents: {len(df_seen)}\")",
+    "crumbs": [
+      "Data Exploration"
+    ]
+  },
+  {
+    "objectID": "story_telling.html#overview",
+    "href": "story_telling.html#overview",
+    "title": "Translating Numbers into Narratives",
+    "section": "",
+    "text": "Data has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.\nMy storytelling philosophy is simple:\nClarity Over Complexity: Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately.\nAnswer the Prompt: Every chart must directly answer a specific business question or challenge a widely held assumption.\nContext is Key: Use subtitles, custom sorting, and specific color palettes to guide the viewer’s eye exactly where it needs to go.",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "story_telling.html#flight-delays-answering-the-prompt",
+    "href": "story_telling.html#flight-delays-answering-the-prompt",
+    "title": "Translating Numbers into Narratives",
+    "section": "1. Flight Delays: Answering the Prompt",
+    "text": "1. Flight Delays: Answering the Prompt\nThe core business question was: “When is the best time to fly to avoid delays?” I aggregated the data by month, calculated delay percentages, and built a clean, sorted horizontal bar chart that made it immediately obvious that November is the safest bet.\n\n\nCode\nmonth_plot = (\n    ggplot(month_grp, aes(x='month', y='percentage')) +\n    geom_bar(stat='identity', fill='#2ca02c') +\n    labs(title=\"Percentage of Delayed Flights by Month\", x=\"Month\", y=\"% Delayed\") +\n    theme(axis_text_x=element_text(angle=45))\n)",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "story_telling.html#housing-ml-challenging-assumptions-the-garage-myth",
+    "href": "story_telling.html#housing-ml-challenging-assumptions-the-garage-myth",
+    "title": "Translating Numbers into Narratives",
+    "section": "2. Housing ML: Challenging Assumptions (The Garage Myth)",
+    "text": "2. Housing ML: Challenging Assumptions (The Garage Myth)\nOne might assume that older historic homes lack attached garages. I built a visualization to test this myth using a boxplot with a strict 1980 dividing line. The data clearly showed that both attached and detached garages span equally across both eras, proving why the ML model successfully ignored garages as an indicator of age.\n\n\nCode\nchart_garages = (\n    ggplot(df, aes(x='garage_type', y='yrbuilt')) +\n    geom_boxplot(fill='orange') +\n    ggtitle(\"Relationship Between Garage Type and Year Built\") +\n    geom_hline(yintercept=1980, linetype='dashed', color='red')\n)",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "story_telling.html#star-wars-survey-context-is-key",
+    "href": "story_telling.html#star-wars-survey-context-is-key",
+    "title": "Translating Numbers into Narratives",
+    "section": "3. Star Wars Survey: Context is Key",
+    "text": "3. Star Wars Survey: Context is Key\nTo prove my data cleansing skills, I took on the challenge of recreating the visualizations published in the original 2014 FiveThirtyEight article. By isolating specific columns, utilizing custom ordering, and matching color hex codes, I mirrored their findings precisely.\n\n\nCode\nanswer_order = [\"Han\", \"Greedo\", \"I don't understand this question\"]\ndata3['Answer'] = pd.Categorical(data3['Answer'], categories=answer_order[::-1], ordered=True)\n\nchart_shot = (\n    ggplot(data3, aes(x='Answer', y='Percentage')) +\n    geom_bar(stat='identity', fill='#008fd5', width=0.4) +\n    coord_flip() +\n    labs(title=\"Who Shot First?\", subtitle=\"Recreation of 538 Original Graphic\", x=\"\", y=\"%\") +\n    theme(panel_grid_major_y='blank', panel_grid_minor_y='blank')\n)",
+    "crumbs": [
+      "Story Telling"
+    ]
+  },
+  {
+    "objectID": "ml.html#overview",
+    "href": "ml.html#overview",
+    "title": "Predicting the Future",
+    "section": "",
+    "text": "The final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes.\nIn these projects, I demonstrate proficiency in:\nClassification Models: Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers.\nRegression Models: Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared.\nHyperparameter Tuning: Restraining models by limiting tree depth and estimator counts to prevent algorithms from “overfitting” on noisy data.",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "ml.html#housing-ml-classification-models",
+    "href": "ml.html#housing-ml-classification-models",
+    "title": "Predicting the Future",
+    "section": "1. Housing ML: Classification Models",
+    "text": "1. Housing ML: Classification Models\nI built a Random Forest Classifier to predict a binary outcome: Was the house built before 1980, or after? By training the model on 80% of the data and testing it on the remaining 20%, it achieved an impressive ~93% accuracy.\n\n\nCode\n# Baseline Random Forest Classification\nrf_classifier = RandomForestClassifier(random_state=42)\nrf_classifier.fit(X_train, y_train)\n\ny_pred_class = rf_classifier.predict(X_test)\nprint(f\"Classification Accuracy: {accuracy_score(y_test, y_pred_class):.2%}\")",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "ml.html#housing-ml-regression-models",
+    "href": "ml.html#housing-ml-regression-models",
+    "title": "Predicting the Future",
+    "section": "2. Housing ML: Regression Models",
+    "text": "2. Housing ML: Regression Models\nAs an advanced objective, I merged the housing data with a neighborhood dataset and trained a Random Forest Regressor to predict the exact year a house was built. I evaluated the model’s precision using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).\n\n\nCode\n# Training a Regressor to predict exact continuous values (years)\nrf_regressor = RandomForestRegressor(random_state=37)\nrf_regressor.fit(X_train_r, y_train_r)\n\nreg_preds = rf_regressor.predict(X_test_r)\n\nmae = mean_absolute_error(y_test_r, reg_preds)\nprint(f\"Regression Mean Absolute Error (MAE): {mae:.2f} years\")",
+    "crumbs": [
+      "Machine Learning"
+    ]
+  },
+  {
+    "objectID": "ml.html#star-wars-survey-hyperparameter-tuning",
+    "href": "ml.html#star-wars-survey-hyperparameter-tuning",
+    "title": "Predicting the Future",
+    "section": "3. Star Wars Survey: Hyperparameter Tuning",
+    "text": "3. Star Wars Survey: Hyperparameter Tuning\nSurvey data is incredibly noisy and filled with random opinions, making it highly susceptible to algorithm overfitting. To push my income-prediction accuracy over the 65% threshold, I upgraded to a Gradient Boosting Classifier and heavily tuned the hyperparameters. By restricting the max_depth to 2, I stopped the algorithm from memorizing random character opinions and forced it to look only at the strongest overarching demographic trends.\n\n\nCode\n# Restrained Gradient Boosting model to prevent overfitting on survey noise\ngb_model = GradientBoostingClassifier(\n    n_estimators=50, \n    learning_rate=0.05, \n    max_depth=2, \n    random_state=37\n)\n\ngb_model.fit(X_train, y_train)\ny_pred_gb = gb_model.predict(X_test)\n\nprint(f\"Tuned Gradient Boosting Accuracy: {accuracy_score(y_test, y_pred_gb):.2%}\")",
+    "crumbs": [
+      "Machine Learning"
+    ]
   }
 ]

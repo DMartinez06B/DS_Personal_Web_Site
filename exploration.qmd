@@ -1,7 +1,74 @@
-# Uncovering the Shape of the Data
+---
+title: "Uncovering the Shape of the Data"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+---
+
+```{python}
+#| echo: false
+import pandas as pd
+import numpy as np
+```
+
+## Overview
 Exploratory Data Analysis (EDA) is where the data starts to tell its story. Before applying complex predictive algorithms, I meticulously explore datasets using grouping, aggregations, and initial visualizations to understand underlying distributions and correlations.
 
-Across my portfolio, data exploration has allowed me to:
-* **Identify the Heaviest Hitters:** Using feature importance extraction to figure out exactly which variables carry the most mathematical weight.
-* **Engineer New Features:** Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories.
-* **Validate the Data:** Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.
+**Across my portfolio, data exploration has allowed me to:**
+
+**Identify the Heaviest Hitters:** Using feature importance extraction to figure out exactly which variables carry the most mathematical weight.
+
+**Engineer New Features:** Creating custom metrics—like proportional ratios instead of raw counts—to ensure fair comparisons between different categories.
+
+**Validate the Data:** Recreating historical charts and filtering data dynamically to ensure the dataset matches known reality.
+
+## 1. Flight Delays: Engineering New Features
+A simple count of delayed flights revealed that major hubs like Atlanta had the most delays simply because they had the most flights. To conduct a fair analysis, I engineered the Proportion of Delayed Flights, revealing that smaller regional airports actually suffered heavier weather-related groundings relative to their size.
+```{python}
+#| eval: false
+# Aggregating flights to calculate proportional delay metrics
+weather_delays = df.groupby('airport_name').agg(
+    total_flights=('num_of_flights_total', 'sum'),
+    weather_delayed_flights=('weather_delayed', 'sum')
+).reset_index()
+
+# Creating the proportional ratio
+weather_delays['proportion_weather_delayed'] = weather_delays['weather_delayed_flights'] / weather_delays['total_flights']
+```
+
+## 2. Housing ML: Identifying the Heaviest Hitters
+To understand what clues gave away a home's age, I extracted the feature_importances_ attribute from an initial Random Forest. This exploration revealed that the top three indicators were total living area (livearea), architectural style (arcstyle_ONE-STORY), and the number of bathrooms (numbaths).
+
+```{python}
+#| eval: false
+# Extracting and ranking the most important clues in the dataset
+importances = rf_model.feature_importances_
+
+feature_df = pd.DataFrame({
+    'Feature': X.columns,
+    'Importance': importances
+})
+
+top_features = feature_df.sort_values(by='Importance', ascending=False).head(10)
+```
+
+## 3. Star Wars Survey: Validating the Data
+You cannot always trust survey respondents. Instead of trusting a simple "Yes/No" column regarding whether they had seen the films, I verified their claims dynamically by keeping only the rows that had non-null responses across the specific movie ranking columns.
+```{python}
+
+#| eval: false
+# Filtering respondents dynamically to validate the dataset
+seen_cols = ['Seen_Ep_I', 'Seen_Ep_II', 'Seen_Ep_III', 'Seen_Ep_IV', 'Seen_Ep_V', 'Seen_Ep_VI']
+
+# Drop respondents who haven't ranked a single movie
+df_seen = df.dropna(subset=seen_cols, how='all').copy()
+
+print(f"Total verified respondents: {len(df_seen)}")
+```

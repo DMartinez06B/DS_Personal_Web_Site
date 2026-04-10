@@ -1,7 +1,72 @@
-# Translating Numbers into Narratives
+---
+title: "Translating Numbers into Narratives"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+---
+
+```{python}
+#| echo: false
+import pandas as pd
+from lets_plot import *
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+## Overview
 Data has no value if stakeholders cannot understand it. The storytelling phase is where I translate raw statistical insights into compelling, publication-ready visualizations that answer direct business questions.
 
-My storytelling philosophy is simple:
-* **Clarity Over Complexity:** Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately.
-* **Answer the Prompt:** Every chart must directly answer a specific business question or challenge a widely held assumption.
-* **Context is Key:** Use subtitles, custom sorting, and specific color palettes to guide the viewer's eye exactly where it needs to go.
+**My storytelling philosophy is simple:**
+
+**Clarity Over Complexity:** Eliminate chart junk. Remove unnecessary gridlines and labels so the main insight shines immediately.
+
+**Answer the Prompt:** Every chart must directly answer a specific business question or challenge a widely held assumption.
+
+**Context is Key:** Use subtitles, custom sorting, and specific color palettes to guide the viewer’s eye exactly where it needs to go.
+
+## 1. Flight Delays: Answering the Prompt
+The core business question was: "When is the best time to fly to avoid delays?" I aggregated the data by month, calculated delay percentages, and built a clean, sorted horizontal bar chart that made it immediately obvious that November is the safest bet.
+
+```{python}
+#| eval: false
+month_plot = (
+    ggplot(month_grp, aes(x='month', y='percentage')) +
+    geom_bar(stat='identity', fill='#2ca02c') +
+    labs(title="Percentage of Delayed Flights by Month", x="Month", y="% Delayed") +
+    theme(axis_text_x=element_text(angle=45))
+)
+```
+
+## 2. Housing ML: Challenging Assumptions (The Garage Myth)
+One might assume that older historic homes lack attached garages. I built a visualization to test this myth using a boxplot with a strict 1980 dividing line. The data clearly showed that both attached and detached garages span equally across both eras, proving why the ML model successfully ignored garages as an indicator of age.
+```{python}
+#| eval: false
+chart_garages = (
+    ggplot(df, aes(x='garage_type', y='yrbuilt')) +
+    geom_boxplot(fill='orange') +
+    ggtitle("Relationship Between Garage Type and Year Built") +
+    geom_hline(yintercept=1980, linetype='dashed', color='red')
+)
+```
+
+## 3. Star Wars Survey: Context is Key
+To prove my data cleansing skills, I took on the challenge of recreating the visualizations published in the original 2014 FiveThirtyEight article. By isolating specific columns, utilizing custom ordering, and matching color hex codes, I mirrored their findings precisely.
+```{python}
+#| eval: false
+answer_order = ["Han", "Greedo", "I don't understand this question"]
+data3['Answer'] = pd.Categorical(data3['Answer'], categories=answer_order[::-1], ordered=True)
+
+chart_shot = (
+    ggplot(data3, aes(x='Answer', y='Percentage')) +
+    geom_bar(stat='identity', fill='#008fd5', width=0.4) +
+    coord_flip() +
+    labs(title="Who Shot First?", subtitle="Recreation of 538 Original Graphic", x="", y="%") +
+    theme(panel_grid_major_y='blank', panel_grid_minor_y='blank')
+)
+```

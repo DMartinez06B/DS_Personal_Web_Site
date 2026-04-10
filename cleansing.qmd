@@ -1,7 +1,58 @@
-# The Foundation: Data Cleansing
-In the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process. 
+---
+title: "The Foundation: Data Cleansing"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+---
 
-My approach to data wrangling involves:
-* **Standardizing Missing Values:** Identifying and normalizing inconsistent null placeholders (like `-999`, blank strings, or `"N/A"`) into standard formats so mathematical functions work correctly.
-* **Format Transformation:** Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding.
-* **Preventing Data Leakage:** Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the "answer key" to the problem it is trying to solve.
+```{python}
+#| echo: false
+import pandas as pd
+import numpy as np
+```
+
+## Overview
+In the real world, data is rarely clean. Before any algorithm can be trained or any graph can be plotted, raw data must be wrestled into a usable format. Across my portfolio, data cleansing has been the most critical—and often most time-consuming—step of the analytical process.
+
+**My approach to data wrangling involves:**
+
+**Standardizing Missing Values:** Identifying and normalizing inconsistent null placeholders (like -999, blank strings, or "N/A") into standard formats so mathematical functions work correctly.
+
+**Format Transformation:** Translating highly complex text data (like survey responses) into machine-readable numeric and binary formats using label encoding and one-hot encoding.
+
+**Preventing Data Leakage:** Rigorously auditing datasets before modeling to remove any columns that might artificially give a machine learning algorithm the “answer key” to the problem it is trying to solve.
+
+
+## 1. Flight Delays: Standardizing Missing Values
+The raw JSON flight dataset contained "missing" data in several breaking formats. I mapped all these anomalies (-999, "", "n/a") to consistent np.nan values so pandas could process the math correctly without skewing the averages.
+
+```{python}
+#| eval: false
+# Standardizing various missing data types into a single format
+df['num_of_delays_carrier'] = pd.to_numeric(df['num_of_delays_carrier'], errors='coerce')
+df['month'] = df['month'].replace('n/a', np.nan)
+df['airport_name'] = df['airport_name'].replace('', np.nan)
+
+# Replacing arbitrary numerical placeholders
+df = df.replace(-999.0, np.nan)
+```
+
+## 2. Housing ML: Preventing Data Leakage
+When prepping the Denver housing dataset for predictive modeling, the biggest threat was "data leakage." I explicitly stripped out columns like yrbuilt (the exact year built) and parcel (an arbitrary ID). If left in, the model would cheat and score 100% simply by reading the year.
+
+```{python}
+#| eval: false
+# Dropping columns that leak the target variable or are useless IDs
+X = df.drop(columns=['before1980', 'yrbuilt', 'parcel'])
+y = df['before1980']
+```
+
+## 3. Star Wars Survey: Format Transformation
+Survey data is notoriously difficult to process because human answers are text-heavy. I mapped paragraph-long headers to concise names, translated text-based categorical ranges (like ages and incomes) into usable numbers, and transformed 14 separate character favorability columns into a 1-5 ordinal scale.

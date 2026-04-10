@@ -1,7 +1,77 @@
-# Predicting the Future
-The final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes. 
+---
+title: "Predicting the Future"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+---
 
-In these projects, I demonstrate proficiency in:
-* **Classification Models:** Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers.
-* **Regression Models:** Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared.
-* **Hyperparameter Tuning:** Restraining models by limiting tree depth and estimator counts to prevent algorithms from "overfitting" on noisy data.
+```{python}
+#| echo: false
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, GradientBoostingClassifier
+```
+
+## Overview
+The final pillar of my portfolio is Machine Learning. This is where historical data is used to train algorithms to recognize complex patterns and predict future outcomes.
+
+**In these projects, I demonstrate proficiency in:**
+
+**Classification Models:** Predicting binary or categorical outcomes using Random Forests, Decision Trees, and Gradient Boosting Classifiers.
+
+**Regression Models:** Predicting continuous, exact numerical values using metrics like Mean Absolute Error (MAE) and R-squared.
+
+**Hyperparameter Tuning:** Restraining models by limiting tree depth and estimator counts to prevent algorithms from “overfitting” on noisy data.
+
+## 1. Housing ML: Classification Models
+I built a Random Forest Classifier to predict a binary outcome: Was the house built before 1980, or after? By training the model on 80% of the data and testing it on the remaining 20%, it achieved an impressive ~93% accuracy.
+
+```{python}
+#| eval: false
+# Baseline Random Forest Classification
+rf_classifier = RandomForestClassifier(random_state=42)
+rf_classifier.fit(X_train, y_train)
+
+y_pred_class = rf_classifier.predict(X_test)
+print(f"Classification Accuracy: {accuracy_score(y_test, y_pred_class):.2%}")
+
+```
+## 2. Housing ML: Regression Models
+As an advanced objective, I merged the housing data with a neighborhood dataset and trained a Random Forest Regressor to predict the exact year a house was built. I evaluated the model's precision using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+```{python}
+#| eval: false
+# Training a Regressor to predict exact continuous values (years)
+rf_regressor = RandomForestRegressor(random_state=37)
+rf_regressor.fit(X_train_r, y_train_r)
+
+reg_preds = rf_regressor.predict(X_test_r)
+
+mae = mean_absolute_error(y_test_r, reg_preds)
+print(f"Regression Mean Absolute Error (MAE): {mae:.2f} years")
+```
+
+## 3. Star Wars Survey: Hyperparameter Tuning
+Survey data is incredibly noisy and filled with random opinions, making it highly susceptible to algorithm overfitting. To push my income-prediction accuracy over the 65% threshold, I upgraded to a Gradient Boosting Classifier and heavily tuned the hyperparameters. By restricting the max_depth to 2, I stopped the algorithm from memorizing random character opinions and forced it to look only at the strongest overarching demographic trends.
+
+```{python}
+#| eval: false
+# Restrained Gradient Boosting model to prevent overfitting on survey noise
+gb_model = GradientBoostingClassifier(
+    n_estimators=50, 
+    learning_rate=0.05, 
+    max_depth=2, 
+    random_state=37
+)
+
+gb_model.fit(X_train, y_train)
+y_pred_gb = gb_model.predict(X_test)
+
+print(f"Tuned Gradient Boosting Accuracy: {accuracy_score(y_test, y_pred_gb):.2%}")
+```
