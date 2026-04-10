@@ -1,7 +1,7 @@
 ---
-title: "Client Report - [Insert Project Title]"
-subtitle: "Course DS 250"
-author: "[STUDENT NAME]"
+title: "Client Report - Predicting Denver Housing Ages"
+subtitle: "Unit 4 Complete (Tasks 1-3 & Regression Stretch)"
+author: "David Martinez"
 format:
   html:
     self-contained: true
@@ -10,19 +10,117 @@ format:
     toc: true
     toc-depth: 3
     toc-location: body
-    number-sections: false
-    html-math-method: katex
     code-fold: true
     code-summary: "Show the code"
-    code-overflow: wrap
-    code-copy: hover
-    code-tools:
-        source: false
-        toggle: true
-        caption: See code
 execute: 
   warning: false
-    
 ---
 
-### Paste in a template
+```{python}
+import pandas as pd 
+import numpy as np
+from lets_plot import *
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
+from sklearn.metrics import accuracy_score, classification_report, mean_absolute_error, mean_squared_error
+
+LetsPlot.setup_html(isolated_frame=True)
+```
+
+## Executive Summary
+This project utilizes Machine Learning to predict the age of Denver homes based on architectural features. A Random Forest Classifier successfully predicted whether a home was built before 1980 with over 93% accuracy. Feature importance extraction revealed that living area, one-story architectural styles, and bathroom counts were the strongest predictors. Additionally, the Stretch Goal was completed by merging neighborhood data and training a Random Forest Regressor to predict the exact year of construction.
+
+## Methods & Feature Importance
+Before training, data leakage was prevented by explicitly dropping the yrbuilt and parcel ID columns. After training the initial Classifier, I extracted the feature importances.
+
+```{python}
+# Load Data
+df = pd.read_csv("https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_ml/dwellings_ml.csv")
+
+# Set up Classification data
+X = df.drop(columns=['before1980', 'yrbuilt', 'parcel'])
+y = df['before1980']
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train Classifier
+rf_classifier = RandomForestClassifier(random_state=42)
+rf_classifier.fit(X_train, y_train)
+
+# Chart Feature Importances
+feature_df = pd.DataFrame({'Feature': X.columns, 'Importance': rf_classifier.feature_importances_})
+top_features = feature_df.sort_values(by='Importance', ascending=False).head(10)
+top_features['Feature'] = pd.Categorical(
+    top_features['Feature'],
+    categories=top_features['Feature'],
+    ordered=True
+)
+
+chart_imp = (
+    ggplot(top_features, aes(x='Feature', y='Importance')) +
+    geom_bar(stat='identity', fill='#0076b6') +
+    coord_flip() +
+    ggtitle('Top 10 Most Important Features for Predicting House Age')
+)
+chart_imp
+
+```
+
+## EDA & Storytelling
+I visualized the top features (like bathrooms) and disproved assumptions about others (like garages). While one might assume older homes lack attached garages, the boxplot below proves both attached and detached garages span widely across the 1980 threshold, explaining why it wasn't a top predictor.
+
+```{python}
+# Graph 1: Number of Bathrooms vs Year Built
+chart_baths = (
+    ggplot(df, aes(x='numbaths', y='yrbuilt', group='numbaths')) +
+    geom_boxplot(fill='lightblue') +
+    ggtitle("Relationship Between Number of Bathrooms and Year Built") +
+    geom_hline(yintercept=1980, linetype='dashed', color='red')
+)
+display(chart_baths)
+
+# Graph 2: Busting the Garage Myth
+gartype_columns = [col for col in df.columns if 'gartype' in col]
+df['garage_type'] = df[gartype_columns].idxmax(axis=1).str.replace('gartype_', '')
+
+chart_garages = (
+    ggplot(df, aes(x='garage_type', y='yrbuilt')) +
+    geom_boxplot(fill='orange') +
+    ggtitle("Relationship Between Garage Type and Year Built") +
+    geom_hline(yintercept=1980, linetype='dashed', color='red')
+)
+display(chart_garages)
+```
+
+
+## Machine Learning Results
+**1. Classification (Before/After 1980)**
+The Random Forest classifier achieved a highly reliable ~93% accuracy.
+```{python}
+y_pred_class = rf_classifier.predict(X_test)
+print(f"Classification Accuracy: {accuracy_score(y_test, y_pred_class):.2%}\n")
+print(classification_report(y_test, y_pred_class))
+```
+
+**2. Regression (Exact Year Built - Stretch Goal)**
+By integrating the neighborhood dataset, I trained a Regressor to predict the exact year of construction.
+```{python}
+# Load Neighborhood data and merge
+df_neighborhoods = pd.read_csv("https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_neighborhoods_ml/dwellings_neighborhoods_ml.csv")
+df_reg = pd.merge(df, df_neighborhoods, on='parcel')
+
+X_reg = df_reg.drop(columns=['yrbuilt', 'before1980', 'parcel', 'garage_type'])
+y_reg = df_reg['yrbuilt']
+
+X_train_r, X_test_r, y_train_r, y_test_r = train_test_split(X_reg, y_reg, test_size=0.2, random_state=37)
+
+rf_regressor = RandomForestRegressor(random_state=37)
+rf_regressor.fit(X_train_r, y_train_r)
+reg_preds = rf_regressor.predict(X_test_r)
+
+mae = mean_absolute_error(y_test_r, reg_preds)
+rmse = np.sqrt(mean_squared_error(y_test_r, reg_preds))
+
+print(f"Regression Mean Absolute Error (MAE): {mae:.2f} years")
+print(f"Regression Root Mean Squared Error (RMSE): {rmse:.2f} years")
+```
