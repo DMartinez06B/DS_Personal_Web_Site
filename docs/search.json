@@ -128,9 +128,9 @@
   {
     "objectID": "competition.html",
     "href": "competition.html",
-    "title": "about me",
+    "title": "Competitions",
     "section": "",
-    "text": "MarkDown Basics",
+    "text": "I participated in the Fall 2025 Hackathon at BYU–Idaho. During the event, I was responsible for managing the database and developing the backend of the website. My work included designing the data structure, ensuring efficient data flow, and implementing the server-side logic that supported the core functionality of the project.",
     "crumbs": [
       "Competitions",
       "Competition"
@@ -413,6 +413,28 @@
     "crumbs": [
       "Competitions",
       "Project 1"
+    ]
+  },
+  {
+    "objectID": "competition.html#competitions",
+    "href": "competition.html#competitions",
+    "title": "Competitions",
+    "section": "",
+    "text": "I participated in the Fall 2025 Hackathon at BYU–Idaho. During the event, I was responsible for managing the database and developing the backend of the website. My work included designing the data structure, ensuring efficient data flow, and implementing the server-side logic that supported the core functionality of the project.",
+    "crumbs": [
+      "Competitions",
+      "Competition"
+    ]
+  },
+  {
+    "objectID": "competition.html#here-you-can-also-find-my-projects-completions-for-the-data-science-course-which-include-data-wrangling-exploratory-data-analysis-and-machine-learning-projects.-each-project-demonstrates-my-ability-to-handle-real-world-datasets-extract-insights-and-build-predictive-models.",
+    "href": "competition.html#here-you-can-also-find-my-projects-completions-for-the-data-science-course-which-include-data-wrangling-exploratory-data-analysis-and-machine-learning-projects.-each-project-demonstrates-my-ability-to-handle-real-world-datasets-extract-insights-and-build-predictive-models.",
+    "title": "Competitions",
+    "section": "Here you can also find my projects completions for the Data Science course, which include data wrangling, exploratory data analysis, and machine learning projects. Each project demonstrates my ability to handle real-world datasets, extract insights, and build predictive models.",
+    "text": "Here you can also find my projects completions for the Data Science course, which include data wrangling, exploratory data analysis, and machine learning projects. Each project demonstrates my ability to handle real-world datasets, extract insights, and build predictive models.",
+    "crumbs": [
+      "Competitions",
+      "Competition"
     ]
   }
 ]

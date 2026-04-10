@@ -1,10 +1,14 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "Competitions"
+subtitle: "Experience"
 ---
 
-# Title 1 Header
-## Title 2 Header
+## Competitions
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+### Fall 2025 BYU–Idaho Hackathon
+
+I participated in the Fall 2025 Hackathon at BYU–Idaho. During the event, I was responsible for managing the database and developing the backend of the website. My work included designing the data structure, ensuring efficient data flow, and implementing the server-side logic that supported the core functionality of the project.
+
+
+
+*Here you can also find my projects completions for the Data Science course, which include data wrangling, exploratory data analysis, and machine learning projects. Each project demonstrates my ability to handle real-world datasets, extract insights, and build predictive models.*
