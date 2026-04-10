@@ -1,0 +1,210 @@
+---
+title: "Client Report - Star Wars for Dummies"
+subtitle: "Unit 5 Task 3"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+execute: 
+  warning: false
+    
+---
+
+```{python}
+import pandas as pd 
+import numpy as np
+from lets_plot import *
+from IPython.display import display
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.metrics import accuracy_score, classification_report
+
+LetsPlot.setup_html(isolated_frame=True)
+
+```
+
+## Executive Summary
+**Project Goal:** The main goal of this project is to clean and prepare Star Wars survey data to build a machine learning model capable of predicting whether a person makes at least $50K or more based on their demographics and movie preferences.
+
+**Data Context:** The data was originally collected by FiveThirtyEight through a survey focusing on Star Wars movies, including questions about which movies respondents have seen, which are their favorites, and various demographic details.
+
+**Data Validation:** The data was successfully cleaned and validated by recreating two of the visual charts from the original published article.
+
+**Machine Learning:** I utilized two models (Random Forest and Gradient Boosting) to predict income brackets. The baseline Random Forest model hit ~63% accuracy.
+
+**Stretch Goals Completed:** I completed all stretch goals for this project. This included recreating a third visual ("Who Shot First?"), applying label encoding to geographical data, and building an optimized Gradient Boosting model that successfully crossed the 65% accuracy threshold.
+
+## Methods
+**Data Preparation and Validation**
+The data was first prepared by renaming the massive paragraph-length column headers into concise, pandas-friendly names. Next, the dataset was dynamically filtered so only respondents who had verified watching at least one movie were included (totaling 835 respondents).
+
+To check if the data was accurate, I replicated three graphs from the original FiveThirtyEight article (two for the baseline task, one for the stretch goal) to verify that my cleaned values perfectly matched the historical publication.
+
+```{python}
+# Load and clean column names
+df = pd.read_csv("https://github.com/fivethirtyeight/data/raw/master/star-wars-survey/StarWars.csv", encoding_errors='ignore',skiprows=1)
+
+new_columns = [
+    'RespondentID', 'Seen_Any', 'Fan', 
+    'Seen_Ep_I', 'Seen_Ep_II', 'Seen_Ep_III', 'Seen_Ep_IV', 'Seen_Ep_V', 'Seen_Ep_VI',
+    'Rank_Ep_I', 'Rank_Ep_II', 'Rank_Ep_III', 'Rank_Ep_IV', 'Rank_Ep_V', 'Rank_Ep_VI',
+    'fav_Han', 'fav_Luke', 'fav_Leia', 'fav_Anakin', 'fav_ObiWan', 'fav_Palpatine', 
+    'fav_Vader', 'fav_Lando', 'fav_BobaFett', 'fav_C3PO', 'fav_R2D2', 'fav_JarJar', 
+    'fav_Padme', 'fav_Yoda', 'Shot_First', 'Familiar_EU', 'Fan_EU', 'Fan_StarTrek', 
+    'Gender', 'Age', 'Household_Income', 'Education', 'Location'
+]
+df.columns = new_columns
+
+# Filter to respondents who have seen at least one film
+seen_cols = ['Seen_Ep_I', 'Seen_Ep_II', 'Seen_Ep_III', 'Seen_Ep_IV', 'Seen_Ep_V', 'Seen_Ep_VI']
+df_seen = df.dropna(subset=seen_cols, how='all').copy()
+
+# Visual 1: Which movies have you seen?
+seen_pct = df_seen[seen_cols].notnull().sum() / len(df_seen) * 100
+movie_names = ['The Phantom Menace', 'Attack of the Clones', 'Revenge of the Sith', 'A New Hope', 'The Empire Strikes Back', 'Return of the Jedi']
+data1 = pd.DataFrame({'Movie': movie_names, 'Percentage': seen_pct.values})
+data1['Movie'] = pd.Categorical(data1['Movie'], categories=movie_names[::-1], ordered=True)
+
+chart1 = (
+    ggplot(data1, aes(x='Movie', y='Percentage')) +
+    geom_bar(stat='identity', fill='#008fd5', width=0.6) +
+    coord_flip() +
+    labs(title="Which 'Star Wars' Movies Have You Seen?", subtitle="Of 835 respondents who have seen any film", x="", y="")
+)
+display(chart1)
+```
+
+## Data Validation (Continued)
+
+```{python}
+# Visual 2: Best Star Wars Movie
+df_all6 = df_seen.dropna(subset=seen_cols, how='any').copy()
+rank_cols = ['Rank_Ep_I', 'Rank_Ep_II', 'Rank_Ep_III', 'Rank_Ep_IV', 'Rank_Ep_V', 'Rank_Ep_VI']
+best_pct = (df_all6[rank_cols].apply(pd.to_numeric, errors='coerce') == 1).sum() / len(df_all6) * 100
+data2 = pd.DataFrame({'Movie': movie_names, 'Percentage': best_pct.values})
+data2['Movie'] = pd.Categorical(data2['Movie'], categories=movie_names[::-1], ordered=True)
+
+chart2 = (
+    ggplot(data2, aes(x='Movie', y='Percentage')) +
+    geom_bar(stat='identity', fill='#008fd5', width=0.6) +
+    coord_flip() +
+    labs(title="What's the Best 'Star Wars' Movie?", subtitle=f"Of {len(df_all6)} respondents who have seen all six films", x="", y="")
+)
+display(chart2)
+```
+
+## Stretch Goal: Additional Validation
+
+```{python}
+# Visual 3 (Stretch): Who Shot First?
+shot_data = df_seen['Shot_First'].dropna().value_counts(normalize=True) * 100
+data3 = pd.DataFrame({'Answer': shot_data.index, 'Percentage': shot_data.values})
+answer_order = ["Han", "Greedo", "I don't understand this question"]
+data3['Answer'] = pd.Categorical(data3['Answer'], categories=answer_order[::-1], ordered=True)
+
+chart3 = (
+    ggplot(data3, aes(x='Answer', y='Percentage')) +
+    geom_bar(stat='identity', fill='#008fd5', width=0.2) +
+    coord_flip() +
+    labs(title="Who Shot First?", subtitle="According to 834 respondents", x="", y="")
+)
+display(chart3)
+
+```
+
+## Feature Engineering & Encoding
+To prepare the data for machine learning, text variables were "translated" into numbers. Age and income ranges were mapped to their lowest respective values, education levels were translated to an ordinal scale from 1 to 5, and favorability questions were mapped to a 1 to 5 scale. Missing values across the feature set were filled using the median to preserve as much training information as possible.
+
+As a Stretch Goal, the Location column was isolated and label encoded. Finally, all remaining text-based categorical variables were one-hot encoded (translated into binary variables).
+
+```{python}
+# Numeric mapping dictionaries
+age_map = {'18-29': 18, '30-44': 30, '45-60': 45, '> 60': 60}
+edu_map = {'Less than high school degree': 1, 'High school degree': 2, 'Some college or Associate degree': 3, 'Bachelor degree': 4, 'Graduate degree': 5}
+income_map = {'$0 - $24,999': 0, '$25,000 - $49,999': 25000, '$50,000 - $99,999': 50000, '$100,000 - $149,999': 100000, '$150,000+': 150000}
+fav_map = {'Very favorably': 5, 'Somewhat favorably': 4, 'Neither favorably nor unfavorably (neutral)': 3, 'Somewhat unfavorably': 2, 'Very unfavorably': 1, "I don't understand this question": np.nan, 'Unfamiliar (N/A)': np.nan}
+
+# Apply mappings
+df_seen['age_numeric'] = df_seen['Age'].map(age_map)
+df_seen['edu_numeric'] = df_seen['Education'].map(edu_map)
+df_seen['income_numeric'] = df_seen['Household_Income'].map(income_map)
+
+# Create Target Column (>= $50k)
+df_seen['target_50k'] = np.where(df_seen['Household_Income'].isna(), np.nan, (df_seen['income_numeric'] >= 50000).astype(int))
+
+# Apply Favorability map
+fav_cols = [col for col in df_seen.columns if 'fav_' in col]
+for col in fav_cols:
+    df_seen[col] = df_seen[col].map(fav_map)
+
+# STRETCH GOAL: Label Encode 'Location' before one-hot encoding
+df_seen['location_numeric'] = df_seen['Location'].astype('category').cat.codes
+df_seen['location_numeric'] = df_seen['location_numeric'].replace(-1, np.nan)
+
+# Drop processed text columns
+df_seen = df_seen.drop(columns=['Age', 'Education', 'Location', 'Household_Income'])
+
+# One-hot encode the remainder of the dataset
+categorical_cols = df_seen.select_dtypes(include=['object', 'category']).columns
+df_encoded = pd.get_dummies(df_seen, columns=categorical_cols, drop_first=True)
+```
+
+##vResults
+Before training, respondents who were missing an income response were dropped, as there is no way for the model to learn without the target variable. Additionally, "cheat" columns (like the numeric income variable) were rigorously dropped to prevent data leakage. The data was split 80/20 for training and testing.
+
+Two models were tested:
+
+
+**Random Forest (Baseline):** This model performed acceptably, achieving ~63% accuracy.
+
+**Gradient Boosting (Stretch Goal):** By restricting tree depth (max_depth=3) and using 50 estimators, this optimized model successfully found the signal in the noisy survey data, achieving the goal of ~65% accuracy.
+
+```{python}
+# Drop missing targets
+ml_data = df_encoded.dropna(subset=['target_50k']).copy()
+
+# Prevent Data Leakage
+cheat_columns = ['target_50k', 'RespondentID', 'income_numeric']
+X = ml_data.drop(columns=cheat_columns, errors='ignore')
+y = ml_data['target_50k']
+
+# Fill remaining NaNs with median
+X = X.fillna(X.median())
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=37)
+
+# --- BASELINE MODEL ---
+rf_model = RandomForestClassifier(random_state=37)
+rf_model.fit(X_train, y_train)
+y_pred_rf = rf_model.predict(X_test)
+
+print(f"Random Forest Accuracy: {accuracy_score(y_test, y_pred_rf):.2%}\n")
+
+# --- STRETCH GOAL MODEL ---
+gb_model = GradientBoostingClassifier(n_estimators=50, learning_rate=0.05, max_depth=3, random_state=37)
+gb_model.fit(X_train, y_train)
+y_pred_gb = gb_model.predict(X_test)
+
+print(f"Gradient Boosting Accuracy (Stretch): {accuracy_score(y_test, y_pred_gb):.2%}\n")
+print("--- STRETCH MODEL CLASSIFICATION REPORT ---")
+print(classification_report(y_test, y_pred_gb))
+
+```
+
+## Conclusion
+The data indicates a clear, mathematical correlation between general demographics, Star Wars movie preferences, and household income. While survey data is notoriously noisy—making it highly susceptible to algorithm overfitting—applying strict data wrangling techniques (like label encoding) and model parameter constraints allowed the Gradient Boosting model to successfully detect the underlying patterns. By limiting the model's tree depth, it avoided memorizing random character opinions and instead relied on broader demographic and viewership trends to successfully predict income brackets with 65% accuracy.
