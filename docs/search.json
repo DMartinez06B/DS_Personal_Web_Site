@@ -237,9 +237,9 @@
   {
     "objectID": "Competition/project1.html",
     "href": "Competition/project1.html",
-    "title": "Client Report - [Insert Project Title]",
+    "title": "Client Report - The Flight Delay Dilemma",
     "section": "",
-    "text": "Paste in a template\n\n\n\n\n Back to top",
+    "text": "Show the code\nimport pandas as pd \nimport numpy as np\nfrom lets_plot import *\n\nLetsPlot.setup_html(isolated_frame=True)",
     "crumbs": [
       "Competitions",
       "Project 1"
@@ -381,5 +381,38 @@
     "title": "Data Science Portfolio Summary",
     "section": "Project 3: The Star Wars Survey Predictions",
     "text": "Project 3: The Star Wars Survey Predictions\nCore Skills: Survey Munging, Label Encoding, One-Hot Encoding, Gradient Boosting, Data Validation.\n\nThe Challenge\nIn 2014, FiveThirtyEight surveyed over 1,000 people regarding their Star Wars preferences. My goal was to validate their original reporting and build an advanced model to predict a respondent’s income bracket based solely on their survey answers.\n\n\nWhat I Did\n\nAdvanced Data Munging: I shortened paragraph-long survey questions into pandas-friendly headers. I then converted text-based ranges (like ages and incomes) into numerical formats, mapped 14 separate character favorability columns to a 1-5 ordinal scale, and label-encoded geographic locations.\nData Validation: I dynamically filtered the data to remove unverified respondents. I then successfully recreated several of the exact charts published in the original FiveThirtyEight article (such as the “Who Shot First?” debate), verifying that my cleaned dataset perfectly matched the historical record.\nGradient Boosting & Overfitting Prevention: I trained an advanced Gradient Boosting Classifier to predict if a user made over $50,000. Because survey data is incredibly noisy, I restricted the algorithm’s tree depth (max_depth=2) to prevent it from memorizing random opinions, successfully isolating the true demographic signals and achieving ~66% accuracy."
+  },
+  {
+    "objectID": "Competition/project1.html#executive-summary",
+    "href": "Competition/project1.html#executive-summary",
+    "title": "Client Report - The Flight Delay Dilemma",
+    "section": "Executive Summary",
+    "text": "Executive Summary\nThis project analyzes airport flight delays to identify the worst offenders for weather-related issues and determine the optimal month for travel. The raw JSON data contained multiple inconsistencies (e.g., -999, “n/a”, and blank strings) which were standardized into a tidy format. Through proportional analysis, I determined that smaller airports suffer higher percentages of weather delays, and the best month to fly to avoid delays overall is November. The stretch goal was completed, providing a side-by-side comparison of delay reasons across major hubs.",
+    "crumbs": [
+      "Competitions",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Competition/project1.html#methods-data-cleansing",
+    "href": "Competition/project1.html#methods-data-cleansing",
+    "title": "Client Report - The Flight Delay Dilemma",
+    "section": "Methods & Data Cleansing",
+    "text": "Methods & Data Cleansing\nFirst, we imported the raw JSON data and fixed all varied missing data types to consistently use np.Nan\n\n\nShow the code\n# Load Data\ndf = pd.read_json(\"https://raw.githubusercontent.com/byuidatascience/data4missing/master/data-raw/flights_missing/flights_missing.json\")\n\n# Standardize Missing Values\ndelay_cols = [col for col in df.columns if col.startswith('num_of_delays_')]\ndf[delay_cols] = df[delay_cols].apply(pd.to_numeric, errors='coerce')\ndf['num_of_flights_total'] = pd.to_numeric(df['num_of_flights_total'], errors='coerce')\ndf['month'] = df['month'].replace({'n/a': np.nan, 'Febuary': 'February'})\ndf['airport_name'] = df['airport_name'].replace('', np.nan)\ndf = df.replace(-999.0, np.nan)\n\n# Drop rows with completely missing airport names or months for the core analysis\ndf_clean = df.dropna(subset=['airport_name', 'month']).copy()",
+    "crumbs": [
+      "Competitions",
+      "Project 1"
+    ]
+  },
+  {
+    "objectID": "Competition/project1.html#results-analysis",
+    "href": "Competition/project1.html#results-analysis",
+    "title": "Client Report - The Flight Delay Dilemma",
+    "section": "Results & Analysis",
+    "text": "Results & Analysis\n1. Which airport has the worst delays? To determine the “worst” airport, I calculated the proportion of flights delayed by weather relative to total flight volume, ensuring massive hubs weren’t unfairly penalized simply for having more flights.\n\n\nShow the code\nweather_delays = df_clean.groupby('airport_name').agg(\n    total_flights=('num_of_flights_total', 'sum'),\n    weather_delayed_flights=('num_of_delays_weather', 'sum')\n).reset_index()\n\nweather_delays['proportion_weather_delayed'] = weather_delays['weather_delayed_flights'] / weather_delays['total_flights']\nweather_delays = weather_delays.sort_values('proportion_weather_delayed', ascending=False)\nweather_delays['airport_name'] = pd.Categorical(\n    weather_delays['airport_name'],\n    categories=weather_delays['airport_name'],\n    ordered=True\n)\n\nweather_plot = (\n    ggplot(weather_delays, aes(x='airport_name', y='proportion_weather_delayed')) +\n    geom_bar(stat='identity', fill='#0084ff') +\n    labs(x='Airport', y='Proportion of Flights Delayed by Weather', title='Proportion of Weather Delays by Airport') +\n    theme(axis_text_x=element_text(angle=45, hjust=1))\n)\nweather_plot\n\n\n\n   \n       \n       \n       \n   \n   \n          \n   \n   \n\n\n\n2. What is the best month to fly? By calculating the percentage of total delays across all airports by month, we can see that November has the lowest percentage of delayed flights, making it the safest bet for travel.\n\n\nShow the code\nmonth_grp = df_clean.groupby(\"month\")[[\"num_of_delays_total\", \"num_of_flights_total\"]].sum().reset_index()\nmonth_grp[\"percentage\"] = (month_grp[\"num_of_delays_total\"] / month_grp[\"num_of_flights_total\"] * 100).round(1)\n\n# Sort chronologically\nmonth_order = [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\", \"August\", \"September\", \"October\", \"November\", \"December\"]\nmonth_grp['month'] = pd.Categorical(month_grp['month'], categories=month_order, ordered=True)\n\nmonth_plot = (\n    ggplot(month_grp, aes(x='month', y='percentage')) +\n    geom_bar(stat='identity', fill='#2ca02c') +\n    labs(title=\"Percentage of Delayed Flights by Month\", x=\"Month\", y=\"% Delayed\") +\n    theme(axis_text_x=element_text(angle=45))\n)\nmonth_plot\n\n\n\n   \n       \n       \n       \n   \n   \n          \n   \n   \n\n\n\n3. Comparing Delay Types (Stretch) Using pd.melt, I restructured the data to compare Weather, Carrier, and Security delays side-by-side. Weather and Carrier issues dominate the reasons for delays across all major airports.\n\n\nShow the code\nairport_grouped = df_clean.groupby('airport_code').agg(\n    total_delays=('num_of_delays_total', 'sum'),\n    weather_delays=('num_of_delays_weather', 'sum'),\n    carrier_delays=('num_of_delays_carrier', 'sum'),\n    security_delays=('num_of_delays_security', 'sum')\n).reset_index()\n\nairport_grouped['Weather'] = ((airport_grouped['weather_delays'] / airport_grouped['total_delays']) * 100)\nairport_grouped['Carrier'] = ((airport_grouped['carrier_delays'] / airport_grouped['total_delays']) * 100)\nairport_grouped['Security'] = ((airport_grouped['security_delays'] / airport_grouped['total_delays']) * 100)\n\nairport_melt = airport_grouped.melt(\n    id_vars='airport_code', \n    value_vars=['Weather', 'Carrier', 'Security'],\n    var_name='Delay Reason',\n    value_name='Percentage'\n)\n\nstretch_plot = (\n    ggplot(airport_melt, aes(x='airport_code', y='Percentage', fill='Delay Reason')) + \n    geom_bar(stat='identity', position='dodge') +\n    labs(title=\"Proportion of Delay Types by Airport\", x=\"Airport Code\", y=\"Percentage of Total Delays\")\n)\nstretch_plot",
+    "crumbs": [
+      "Competitions",
+      "Project 1"
+    ]
   }
 ]
