@@ -1,10 +1,60 @@
 ---
-title: "about me"
-subtitle: "my data science portfolio"
-# use quarto markdown to 
+title: "Data Science Portfolio Summary"
+subtitle: "A comprehensive overview of data wrangling, EDA, and Machine Learning projects"
+author: "David Martinez"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    theme: flatly
 ---
 
-# Title 1 Header
-## Title 2 Header
+## Executive Overview
 
-[MarkDown Basics](https://quarto.org/docs/authoring/markdown-basics.html#links-images)
+This portfolio showcases my ability to execute the entire Data Science lifecycle. Across three distinct projects, I have demonstrated proficiency in extracting messy data, engineering features, validating historical reports, and building predictive Machine Learning algorithms. 
+
+Below is a high-level summary of the methodologies, tools, and results for each major capstone project.
+
+---
+
+## Project 1: The Flight Delay Dilemma
+**Core Skills:** JSON Data Parsing, Data Cleansing, Exploratory Data Analysis (EDA), Data Storytelling.
+
+### The Challenge
+Flight records are notoriously unstructured. I was tasked with analyzing a complex JSON dataset of airport delays to identify the worst offenders for weather delays and determine the optimal time of year to travel.
+
+### What I Did
+* **Data Cleansing:** Standardized millions of rows of data where "missing" information was represented in breaking formats (e.g., `-999`, blank strings, `"n/a"`, and `"1500+"`). I mapped all anomalies to consistent `NaN` values so pandas could process the math correctly.
+* **Feature Engineering:** Instead of looking at raw delay counts (which unfairly penalize massive hubs like Atlanta), I engineered a new feature: the **Proportion of Delayed Flights**.
+* **Storytelling:** I aggregated the data to definitively answer the business prompt. I built grouped bar charts using `lets_plot` and `pd.melt()` to visually prove which months are safest for travel and to compare delay reasons (Weather vs. Carrier vs. Security) side-by-side.
+
+---
+
+## Project 2: Predicting Denver Housing Ages
+**Core Skills:** Feature Selection, Classification, Regression, Preventing Data Leakage.
+
+### The Challenge
+Can an algorithm guess how old a house is just by looking at its architectural features? Using a dataset of thousands of dwellings in Denver, Colorado, I built predictive machine learning models to classify and estimate the exact year homes were built.
+
+### What I Did
+* **Preventing Data Leakage:** I rigorously audited the dataset to strip out columns like `yrbuilt` and `parcel` ID to ensure the model couldn't "cheat" during training.
+* **Classification (Random Forest):** I built a classification model to predict whether a home was built before 1980. By training on 80% of the data, the model achieved an impressive **~93% accuracy**.
+* **Feature Interpretation:** I extracted the `feature_importances_` to explain *how* the model was making decisions, identifying that living area, 1-story architectural styles, and bathroom counts were the heaviest indicators of age.
+* **Regression (Stretch Goal):** I merged the housing data with a secondary neighborhood dataset and trained a Random Forest Regressor to predict the *exact* year a house was built, evaluating the precision using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE).
+
+---
+
+## Project 3: The Star Wars Survey Predictions
+**Core Skills:** Survey Munging, Label Encoding, One-Hot Encoding, Gradient Boosting, Data Validation.
+
+### The Challenge
+In 2014, FiveThirtyEight surveyed over 1,000 people regarding their Star Wars preferences. My goal was to validate their original reporting and build an advanced model to predict a respondent's income bracket based solely on their survey answers.
+
+### What I Did
+* **Advanced Data Munging:** I shortened paragraph-long survey questions into pandas-friendly headers. I then converted text-based ranges (like ages and incomes) into numerical formats, mapped 14 separate character favorability columns to a 1-5 ordinal scale, and label-encoded geographic locations.
+* **Data Validation:** I dynamically filtered the data to remove unverified respondents. I then successfully recreated several of the exact charts published in the original FiveThirtyEight article (such as the "Who Shot First?" debate), verifying that my cleaned dataset perfectly matched the historical record.
+* **Gradient Boosting & Overfitting Prevention:** I trained an advanced Gradient Boosting Classifier to predict if a user made over $50,000. Because survey data is incredibly noisy, I restricted the algorithm's tree depth (`max_depth=2`) to prevent it from memorizing random opinions, successfully isolating the true demographic signals and achieving ~66% accuracy.
